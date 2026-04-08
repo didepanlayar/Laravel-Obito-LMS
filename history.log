@@ -42,3 +42,17 @@ Output: "redis-works"
 - composer require laravel/breeze --dev
 - php artisan breeze:install blade
 - npm install && npm run build
+
+### Models and Database Schema
+- php artisan make:model Category -m
+- php artisan make:model Course -m
+- php artisan make:model CourseBenefit -m
+- php artisan make:model CourseSection -m
+- php artisan make:model SectionContent -m
+- php artisan make:model CourseStudent -m
+- php artisan make:model CourseMentor -m
+- php artisan make:model Pricing -m
+- php artisan make:model Transaction -m
+# Modify User Migration
+# After modify Database Schema then migrate
+- php artisan migrate:fresh
