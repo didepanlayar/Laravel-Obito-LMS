@@ -56,3 +56,5 @@ Output: "redis-works"
 # Modify User Migration
 # After modify Database Schema then migrate
 - php artisan migrate:fresh
+
+### Eloquent ORM
