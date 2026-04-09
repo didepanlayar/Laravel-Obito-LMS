@@ -58,3 +58,9 @@ Output: "redis-works"
 - php artisan migrate:fresh
 
 ### Eloquent ORM
+
+### Custom Method on Models
+- Modify Course Models
+- Modify Transaction Models
+- Modify Pricing Models
+- Modify User Models
