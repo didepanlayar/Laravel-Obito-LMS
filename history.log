@@ -70,3 +70,13 @@ Output: "redis-works"
 - composer require filament/filament
 - php artisan filament:install --panels
 - php artisan make:filament-user
+
+### Filament Resources
+- php artisan make:filament-resource User
+- php artisan make:filament-resource Category --soft-deletes
+- php artisan make:filament-resource Course --soft-deletes
+- php artisan make:filament-resource CourseMentor --soft-deletes
+- php artisan make:filament-resource SectionContent --soft-deletes
+- php artisan make:filament-resource Role --soft-deletes
+- php artisan make:filament-resource Pricing --soft-deletes
+- php artisan make:filament-resource Transaction --soft-deletes
