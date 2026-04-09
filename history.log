@@ -38,7 +38,7 @@ Output: "redis-works"
 
 # Modify .gitignore and README.md
 
-# Laravel Breeze
+### Laravel Breeze
 - composer require laravel/breeze --dev
 - php artisan breeze:install blade
 - npm install && npm run build
@@ -64,3 +64,9 @@ Output: "redis-works"
 - Modify Transaction Models
 - Modify Pricing Models
 - Modify User Models
+
+### Filament Admin Panels
+# Installation
+- composer require filament/filament
+- php artisan filament:install --panels
+- php artisan make:filament-user
