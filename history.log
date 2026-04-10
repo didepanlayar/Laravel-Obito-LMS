@@ -43,6 +43,12 @@ Output: "redis-works"
 - php artisan breeze:install blade
 - npm install && npm run build
 
+### Laravel Spatie
+- composer require spatie/laravel-permission
+- php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+- php artisan optimize:clear
+- php artisan migrate
+
 ### Models and Database Schema
 - php artisan make:model Category -m
 - php artisan make:model Course -m
@@ -85,3 +91,4 @@ Output: "redis-works"
 - Category
 - Pricing
 - User
+- Role
