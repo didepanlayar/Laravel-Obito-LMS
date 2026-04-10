@@ -80,3 +80,8 @@ Output: "redis-works"
 - php artisan make:filament-resource Role --soft-deletes
 - php artisan make:filament-resource Pricing --soft-deletes
 - php artisan make:filament-resource Transaction --soft-deletes
+
+### CRUD
+- Category
+- Pricing
+- User
