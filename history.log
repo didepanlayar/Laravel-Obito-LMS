@@ -92,3 +92,9 @@ Output: "redis-works"
 - Pricing
 - User
 - Role
+
+### RolePermissionSeeder
+- php artisan make:seeder RolePermissionSeeder
+# Modify RolePermissionSeeder
+# Modify DatabaseSeeder then fresh migrate
+- php artisan migrate:fresh --seed
