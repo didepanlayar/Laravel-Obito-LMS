@@ -92,6 +92,7 @@ Output: "redis-works"
 - Pricing
 - User
 - Role
+- Course
 
 ### RolePermissionSeeder
 - php artisan make:seeder RolePermissionSeeder
