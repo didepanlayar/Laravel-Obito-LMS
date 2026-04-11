@@ -99,3 +99,6 @@ Output: "redis-works"
 # Modify RolePermissionSeeder
 # Modify DatabaseSeeder then fresh migrate
 - php artisan migrate:fresh --seed
+
+### Course Relation Manager
+- php artisan make:filament-relation-manager CourseResource courseSections name

@@ -36,7 +36,7 @@ class Course extends Model
     // Course has many course sections
     public function courseSections(): HasMany
     {
-        return $this->hasMany(CourseBenefit::class);
+        return $this->hasMany(CourseSection::class);
     }
 
     // Course has many course students
