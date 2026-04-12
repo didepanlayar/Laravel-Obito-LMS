@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
@@ -16,7 +17,12 @@ class SectionContentsTable
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('courseSection.name')
+                    ->searchable(),
+                TextColumn::make('courseSection.course.name')
+                    ->searchable(),
             ])
             ->filters([
                 TrashedFilter::make(),
