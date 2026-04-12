@@ -93,6 +93,7 @@ Output: "redis-works"
 - User
 - Role
 - Course
+- Course Mentors
 
 ### RolePermissionSeeder
 - php artisan make:seeder RolePermissionSeeder
