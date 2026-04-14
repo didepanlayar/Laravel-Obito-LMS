@@ -95,6 +95,7 @@ Output: "redis-works"
 - Course
 - Course Mentors
 - Section Contents
+- Transaction
 
 ### RolePermissionSeeder
 - php artisan make:seeder RolePermissionSeeder
