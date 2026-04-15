@@ -15,12 +15,15 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use UnitEnum;
 
 class SectionContentResource extends Resource
 {
     protected static ?string $model = SectionContent::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::DocumentText;
+
+    protected static string | UnitEnum | null $navigationGroup = 'Products';
 
     public static function form(Schema $schema): Schema
     {
