@@ -112,3 +112,14 @@ Output: "redis-works"
 # TransactionObserver
 - php artisan make:observer TransactionObserver
 # Register TransactionObserver to AppServiceProvider.php
+
+### Front
+- php artisan make:controller FrontController
+
+### Dashboard
+- php artisan make:controller DashboardController
+
+### Course
+- php artisan make:controller CourseController
+
+# Modify Web Route
