@@ -129,3 +129,6 @@ Output: "redis-works"
 # Create app/Repositories/PricingRepository.php
 # Create app/Services/PricingService.php
 # Register Pricing Service Repository to AppServiceProvider.php
+
+### Course Service (Without Repository because communication is handled by Models)
+# create app/Services/CourseService.php
