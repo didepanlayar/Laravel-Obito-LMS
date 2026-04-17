@@ -123,3 +123,9 @@ Output: "redis-works"
 - php artisan make:controller CourseController
 
 # Modify Web Route
+
+### Pricing Service Repository
+# Create app/Repositories/PricingRepositoryInterface.php
+# Create app/Repositories/PricingRepository.php
+# Create app/Services/PricingService.php
+# Register Pricing Service Repository to AppServiceProvider.php
