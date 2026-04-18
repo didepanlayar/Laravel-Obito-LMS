@@ -132,3 +132,9 @@ Output: "redis-works"
 
 ### Course Service (Without Repository because communication is handled by Models)
 # create app/Services/CourseService.php
+
+### Transaction Service Repository
+# Create app/Repositories/TransactionRepositoryInterface.php
+# Create app/Repositories/TransactionRepository.php
+# Create app/Services/TransactionService.php
+# Register Transaction Service Repository to AppServiceProvider.php
