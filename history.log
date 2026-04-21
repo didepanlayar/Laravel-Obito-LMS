@@ -138,3 +138,8 @@ Output: "redis-works"
 # Create app/Repositories/TransactionRepository.php
 # Create app/Services/TransactionService.php
 # Register Transaction Service Repository to AppServiceProvider.php
+
+### Midtrans
+- composer require midtrans/midtrans-php
+# Create app/config/midtrans.php
+# Modify .env
