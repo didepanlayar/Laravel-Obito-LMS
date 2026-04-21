@@ -131,7 +131,7 @@ Output: "redis-works"
 # Register Pricing Service Repository to AppServiceProvider.php
 
 ### Course Service (Without Repository because communication is handled by Models)
-# create app/Services/CourseService.php
+# Create app/Services/CourseService.php
 
 ### Transaction Service Repository
 # Create app/Repositories/TransactionRepositoryInterface.php
@@ -143,3 +143,6 @@ Output: "redis-works"
 - composer require midtrans/midtrans-php
 # Create app/config/midtrans.php
 # Modify .env
+
+### Midtrans Service
+- Create app/Services/MidtransService.php
