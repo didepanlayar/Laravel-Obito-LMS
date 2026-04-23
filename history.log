@@ -146,3 +146,6 @@ Output: "redis-works"
 
 ### Midtrans Service
 - Create app/Services/MidtransService.php
+
+### Payment Service
+- Create app/Services/PaymentService.php
