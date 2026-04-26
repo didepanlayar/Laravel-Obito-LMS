@@ -48,6 +48,7 @@ Output: "redis-works"
 - php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 - php artisan optimize:clear
 - php artisan migrate
+# Register Middleware bootstrap/app.php
 
 ### Models and Database Schema
 - php artisan make:model Category -m
