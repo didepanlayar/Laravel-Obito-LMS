@@ -150,3 +150,7 @@ Output: "redis-works"
 
 ### Payment Service
 - Create app/Services/PaymentService.php
+
+### CheckSubscription Middleware
+- php artisan make:middleware CheckSubscription
+# Register Middleware bootstrap/app.php
