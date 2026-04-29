@@ -37,6 +37,7 @@ class TransactionService
         return compact(
             'user',
             'alreadySubscribed',
+            'pricing',
             'totalTaxAmount',
             'subTotalAmount',
             'grandTotalAmount',

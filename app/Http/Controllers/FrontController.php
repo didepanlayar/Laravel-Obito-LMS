@@ -41,10 +41,10 @@ class FrontController extends Controller
         $checkoutData = $this->transactionService->prepareCheckout($pricing);
 
         if ($checkoutData['alreadySubscribed']) {
-            // redirect to pricing
+            return redirect()->route('front.pricing')->with('error', 'You are already subscribed to this plan.');
         }
-
-        // return to checkout
+        
+        return view('front.checkout', $checkoutData);
     }
 
     public function checkoutSuccess()
