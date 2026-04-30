@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard/subscription/{transaction}', [DashboardController::class, 'subscriptionDetail'])->name('dashboard.subscription.detail');
 
         // Course
-        Route::get('/dashboard/courses', [CourseController::class, 'index'])->name('dashboard.course');
+        Route::get('/dashboard/courses', [CourseController::class, 'index'])->name('dashboard');
         Route::get('/dashboard/courses/{course:slug}', [CourseController::class, 'detail'])->name('dashboard.courses.detail');
         Route::get('/dashboard/courses/search', [CourseController::class, 'searchCourse'])->name('dashboard.courses.search');
 

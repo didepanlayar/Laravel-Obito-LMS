@@ -154,3 +154,6 @@ Output: "redis-works"
 ### CheckSubscription Middleware
 - php artisan make:middleware CheckSubscription
 # Register Middleware bootstrap/app.php
+
+### NavigationAuth Component
+- php artisan make:component NavigationAuth

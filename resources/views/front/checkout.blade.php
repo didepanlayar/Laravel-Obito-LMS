@@ -3,14 +3,14 @@
 @section('title', 'Checkout - Obito Online Learning Platform')
 
 @section('content')
-    <x-nav-guest />
+    <x-navigation-auth/>>
     <div id="path" class="flex w-full bg-white border-b border-obito-grey py-[14px]">
         <div class="flex items-center w-full max-w-[1280px] px-[75px] mx-auto gap-5">
-            <a href="#" class="last-of-type:font-semibold">Home</a>
+            <a href="{{ route('front.index') }}" class="last-of-type:font-semibold">Home</a>
             <div class="h-10 w-px bg-obito-grey"></div>
-            <a href="pricing.html" class="last-of-type:font-semibold">Pricing Packages</a>
+            <a href="{{ route('front.pricing') }}" class="last-of-type:font-semibold">Pricing Packages</a>
             <span class="text-obito-grey">/</span>
-            <a href="#" class="last-of-type:font-semibold">Checkout Subscription</a>
+            <a href="javascript:void(0)" class="last-of-type:font-semibold">Checkout Subscription</a>
         </div>
     </div>
     <main class="flex flex-1 justify-center py-5 items-center">
@@ -29,7 +29,7 @@
                                 <p class="text-sm leading-[21px] text-obito-text-secondary">{{ $user->occupation }}</p>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="javascript:void(0)">
                             <p class="text-sm leading-[21px] hover:underline text-obito-green">Change Account</p>
                         </a>
                     </div>
