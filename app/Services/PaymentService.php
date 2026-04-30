@@ -54,9 +54,9 @@ class PaymentService
                     'quantity' => 1,
                     'name' => 'PPN 11%',
                 ],
-                'custom_field1' => $user->id,
-                'custom_field2' => $id,
-            ]
+            ],
+            'custom_field1' => $user->id,
+            'custom_field2' => $id,
         ];
 
         return $this->midtransService->createSnapToken($params);

@@ -52,10 +52,10 @@ class FrontController extends Controller
         $pricing = $this->transactionService->getRecentPricing();
 
         if (!$pricing) {
-            //  redirect to pricing with error
+            return redirect()->route('front.pricing')->with('error', 'No recent subscription found.');
         }
 
-        // return to checkout success
+        return view('front.checkout-success', compact('pricing'));
     }
 
     public function paymentStoreMidtrans()

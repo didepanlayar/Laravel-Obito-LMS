@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
         // Checkout
         Route::get('/checkout/success', [FrontController::class, 'checkoutSuccess'])->name('front.checkout.success');
         Route::get('/checkout/{pricing}', [FrontController::class, 'checkout'])->name('front.checkout');
-        Route::get('/booking/payment/midtrans', [FrontController::class, 'paymentStoreMidtrans'])->name('front.payment.store.midtrans');
+        Route::post('/booking/payment/midtrans', [FrontController::class, 'paymentStoreMidtrans'])->name('front.payment.store.midtrans');
     });
 });
 

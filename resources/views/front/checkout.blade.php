@@ -3,7 +3,7 @@
 @section('title', 'Checkout - Obito Online Learning Platform')
 
 @section('content')
-    <x-navigation-auth/>>
+    <x-navigation-auth/>
     <div id="path" class="flex w-full bg-white border-b border-obito-grey py-[14px]">
         <div class="flex items-center w-full max-w-[1280px] px-[75px] mx-auto gap-5">
             <a href="{{ route('front.index') }}" class="last-of-type:font-semibold">Home</a>
@@ -15,7 +15,8 @@
     </div>
     <main class="flex flex-1 justify-center py-5 items-center">
         <div class="flex w-[1000px] !h-fit rounded-[20px] border border-obito-grey gap-[40px] bg-white items-center p-5">
-            <form id="checkout-details" action="success-checkout.html" class="w-full flex flex-col gap-5">
+            <form id="checkout-details" method="POST" class="w-full flex flex-col gap-5">
+                @csrf
                 <h1 class="font-bold text-[22px] leading-[33px]">Checkout Pro</h1>
                 <section id="give-access-to" class="flex flex-col gap-2">
                     <h2 class="font-semibold">Give Access to</h2>
@@ -82,12 +83,12 @@
                     </div>
                 </section>
                 <div class="grid grid-cols-2 gap-[14px]">
-                    <a href="pricing.html">
+                    <a href="{{ route('front.pricing') }}">
                         <div class="flex border border-obito-grey rounded-full items-center justify-center py-[10px] hover:border-obito-green transition-all duration-300">
                             <p class="font-semibold">Cancel</p>
                         </div>
                     </a>
-                    <button type="submit" class="flex text-white bg-obito-green rounded-full items-center justify-center py-[10px] hover:drop-shadow-effect transition-all duration-300">
+                    <button type="submit" id="pay-now" class="flex text-white bg-obito-green rounded-full items-center justify-center py-[10px] hover:drop-shadow-effect transition-all duration-300">
                         <p class="font-semibold">Pay Now</p>
                     </button>
                 </div>
@@ -134,4 +135,50 @@
 
 @push('after-scripts')
     <script src="{{ asset('obito/js/dropdown-navbar.js') }}"></script>
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.clientKey') }}"></script>
+    <script type="text/javascript">
+        const payButton = document.getElementById('pay-now');
+        payButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Fetch the Snap token from your backend
+            fetch('{{ route('front.payment.store.midtrans') }}', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                },
+                body: JSON.stringify({
+                    // Any additional data you want to send with the request
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.snap_token) {
+                    // Trigger Midtrans Snap payment popup
+                    snap.pay(data.snap_token, {
+                        onSuccess: function(result) {
+                            window.location.href = "{{ route('front.checkout.success') }}";
+                        },
+                        onPending: function(result) {
+                            alert('Payment pending!');
+                            window.location.href = "{{ route('front.index') }}";
+                        },
+                        onError: function(result) {
+                            alert('Payment failed: ' + result.status_message);
+                            window.location.href = "{{ route('front.index') }}";
+                        },
+                        onClose: function() {
+                            alert('Payment popup closed');
+                            window.location.href = "{{ route('front.index') }}";
+                        }
+                    });
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 @endpush
