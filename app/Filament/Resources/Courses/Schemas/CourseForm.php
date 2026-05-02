@@ -20,11 +20,17 @@ class CourseForm
                     ->schema([
                         TextInput::make('name')
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpanFull(),
                         FileUpload::make('thumbnail')
                             ->required()
-                            ->image(),
-                    ]),
+                            ->image()
+                            ->disk('public')
+                            ->directory('courses')
+                            ->visibility('public')
+                            ->columnSpanFull(),
+                    ])
+                    ->columnSpanFull(),
                 Fieldset::make('Additional')
                     ->schema([
                         Repeater::make('benefits')
@@ -32,9 +38,11 @@ class CourseForm
                             ->schema([
                                 TextInput::make('name')
                                     ->required(),
-                            ]),
+                            ])
+                            ->columnSpanFull(),
                         Textarea::make('about')
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         Select::make('is_popular')
                             ->required()
                             ->options([
@@ -46,7 +54,8 @@ class CourseForm
                             ->relationship('category', 'name')
                             ->searchable()
                             ->preload(),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
             ]);
     }
 }

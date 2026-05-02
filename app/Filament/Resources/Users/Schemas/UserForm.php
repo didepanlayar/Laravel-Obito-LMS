@@ -21,10 +21,12 @@ class UserForm
                     ->email()
                     ->maxLength(255),
                 TextInput::make('password')
-                    ->required()
+                    ->required(fn (string $operation) => $operation === 'create')
                     ->password()
                     ->minLength(8)
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->dehydrateStateUsing(fn ($state) => bcrypt($state))
+                    ->dehydrated(fn ($state) => filled($state)),
                 Select::make('occupation')
                     ->options([
                         'Developer' => 'Developer',
@@ -38,7 +40,10 @@ class UserForm
                     ->required(),
                 FileUpload::make('photo')
                     ->required()
-                    ->image(),
+                    ->image()
+                    ->disk('public')
+                    ->directory('photos')
+                    ->visibility('public'),
             ]);
     }
 }

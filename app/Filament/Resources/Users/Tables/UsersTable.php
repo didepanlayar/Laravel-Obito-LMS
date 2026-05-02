@@ -18,7 +18,8 @@ class UsersTable
     {
         return $table
             ->columns([
-                ImageColumn::make('photo'),
+                ImageColumn::make('photo')
+                    ->disk('public'),
                 TextColumn::make('name'),
                 TextColumn::make('roles.name'),
             ])

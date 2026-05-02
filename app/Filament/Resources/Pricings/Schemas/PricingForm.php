@@ -25,7 +25,8 @@ class PricingForm
                             ->required()
                             ->numeric()
                             ->prefix('Month'),
-                    ]),
+                    ])
+                    ->columnSpanFull(),
             ]);
     }
 }
