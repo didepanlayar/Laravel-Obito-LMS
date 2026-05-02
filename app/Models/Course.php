@@ -36,7 +36,7 @@ class Course extends Model
     // Course has many course sections
     public function courseSections(): HasMany
     {
-        return $this->hasMany(CourseSection::class);
+        return $this->hasMany(CourseSection::class, 'course_id');
     }
 
     // Course has many course students
@@ -59,7 +59,7 @@ class Course extends Model
 
     public function getContentCountAttribute()
     {
-        return $this->courseSections()->sum(function ($section) {
+        return $this->courseSections->sum(function ($section) {
             return $section->sectionContents->count();
         });
     }
