@@ -24,9 +24,9 @@ class CourseController extends Controller
 
     public function detail(Course $course)
     {
-        $course->load(['category', 'benefits', 'courseSections.sectionContents']);
+        $course->load(['category', 'benefits', 'courseSections.sectionContents', 'courseMentors.mentor']);
 
-        // return to course detail
+        return view('courses.detail', compact('course'));
     }
 
     public function join(Course $course)
@@ -34,7 +34,7 @@ class CourseController extends Controller
         $studentName = $this->courseService->enrollUser($course);
         $firstSectionAndContent = $this->courseService->getFirstSectionAndContent($course);
 
-        // return to join
+        return view('courses.join', array_merge(compact('studentName', 'course'), $firstSectionAndContent));
     }
 
     public function learning(Course $course, $contentSectionId, $sectionContentId)
