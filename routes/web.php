@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
         // Course
         Route::get('/dashboard/courses', [CourseController::class, 'index'])->name('dashboard');
         Route::get('/dashboard/courses/{course:slug}', [CourseController::class, 'detail'])->name('dashboard.courses.detail');
-        Route::get('/dashboard/courses/search', [CourseController::class, 'searchCourse'])->name('dashboard.courses.search');
+        Route::get('/dashboard/search/courses', [CourseController::class, 'searchCourse'])->name('dashboard.courses.search');
 
         Route::middleware('check.subscription')->group(function () {
             Route::get('/dashboard/courses/join/{course:slug}', [CourseController::class, 'join'])->name('dashboard.course.join');

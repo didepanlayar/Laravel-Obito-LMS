@@ -4,9 +4,9 @@
             <a href="{{ route('front.index') }}" class="flex shrink-0">
                 <img src="{{ asset('obito/assets/images/logos/logo.svg') }}" class="flex shrink-0" alt="logo">
             </a>
-            <form action="search-course.html" class="relative ">
+            <form action="{{ route('dashboard.courses.search') }}" method="GET" class="relative ">
                 <label class="group">
-                    <input type="text" name="" id="" class="appearance-none outline-none ring-1 ring-obito-grey rounded-full w-[400px]  py-[14px] px-5 bg-white font-bold placeholder:font-normal placeholder:text-obito-text-secondary group-focus-within:ring-obito-green transition-all duration-300 pr-[50px]" placeholder="Search course by name">
+                    <input type="text" name="search" id="search" class="appearance-none outline-none ring-1 ring-obito-grey rounded-full w-[400px]  py-[14px] px-5 bg-white font-bold placeholder:font-normal placeholder:text-obito-text-secondary group-focus-within:ring-obito-green transition-all duration-300 pr-[50px]" placeholder="Search course by name">
                     <button type="submit" class="absolute right-0 top-0 h-[52px] w-[52px] flex shrink-0 items-center justify-center">
                         <img src="{{ asset('obito/assets/images/icons/search-normal-green-fill.svg') }}" class="flex shrink-0 w-10 h-10" alt="">
                     </button>
