@@ -18,7 +18,7 @@ class CheckSubscription
     {
         $user = Auth::user();
 
-        if (!$user || $user->hasActiveSubscription()) {
+        if (!$user || !$user->hasActiveSubscription()) {
             return redirect()->route('front.pricing')->with('error', 'You need an active subscription to proceed.');
         }
 
