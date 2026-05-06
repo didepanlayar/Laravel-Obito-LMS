@@ -157,3 +157,11 @@ Output: "redis-works"
 
 ### NavigationAuth Component
 - php artisan make:component NavigationAuth
+
+### Midtrans Setup
+# Login Midtrans go to Settings > Payment > Notification URL then paste 3 field with https://example.com/booking/payment/midtrans/notification
+# Modify bootstrap/app.php
+# Test Setup with Ngrok
+- ngrok http 80
+# Or
+- ngrok http 80 --host-header=example.com
